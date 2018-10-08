@@ -1,0 +1,20 @@
+version: "3.1"
+
+services:
+  redis:
+    image: redis:alpine
+
+  db:
+    image: postgres:9.4
+
+  vote:
+    image: dockersamples/examplevotingapp_vote:before
+
+  result:
+    image: dockersamples/examplevotingapp_result:before
+    
+  worker:
+    image: dockersamples/examplevotingapp_worker
+
+  visualizer:
+    image: dockersamples/visualizer
